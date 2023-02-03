@@ -428,7 +428,7 @@ Widget buildSimilarMovies(context, SimilarMovies similarMovies) => Column(
             border: Border.all(),
           ),
           padding: const EdgeInsets.all(2.0),
-          child: CachedNetworkImage(
+          child: similarMovies.posterPath!=null ? CachedNetworkImage(
             width: 150.0,
             height: 200.0,
             fit: BoxFit.cover,
@@ -437,7 +437,7 @@ Widget buildSimilarMovies(context, SimilarMovies similarMovies) => Column(
                 similarMovies.posterPath!.toString(),
               ),
             ),
-          ),
+          ):Image.asset('assets/images/person.png'),
         ),
         const SizedBox(
           height: 10.0,
